@@ -7,5 +7,4 @@ for _line in `cat ${_listproxy}`
 	do
 	echo -e ` echo -e ${_line} | base64 --decode` >> ${_listproxy}
 done
-echo "$(tail -n +${_nbrline} ${_listproxy})" > "${_listproxy}"
-echo "$(tail -n +2 ${_listproxy})" > "${_listproxy}" #
+echo "$(tail -n +$((${_nbrline}+1)) ${_listproxy})" > "${_listproxy}"
